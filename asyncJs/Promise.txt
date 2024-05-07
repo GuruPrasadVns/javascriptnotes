@@ -1,0 +1,25 @@
+Sometimes you need to create a Promise which is already resolved.This is particular useful when you write unit tests.
+For that,
+    const promise = Promise.resolve({id : 1});
+    promise.then(result => console.log(result));
+
+Sometimes you need to create a Promise which is rejected.
+For that,
+    const promise = Promise.reject(new Error('reason for rejection.....'));
+    promise.catch(err => console.log(err.message));
+
+
+Running Parallel Promises
+------------------------------------------------------------------------------------------------
+    - In some cases you want to ru parallel promises and when all the promises or async operations are completed you
+      want to do something.
+
+    - For this Promise.all() method is used which takes an array of promises and also returns a Promise which will
+      resolve when all the promises passed in array are resolved.
+
+      e.g.  Promise.all([p1, p1]).then(result => console.log(result));
+
+    - If any of the promise is rejected then the resultant Promise is also considered to be rejected.
+
+
+    - If you want to reso
